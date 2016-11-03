@@ -155,13 +155,13 @@ describe 'Calculator' do
 
   describe "#pow" do
     it 'raises a number to a positive power' do
-      expect(string_calc.pow(2,3)).to eq('8')
+      expect(string_calc.pow(2,3)).to eq('8.0')
     end
     it 'raises a number to a negative power' do
       expect(string_calc.pow(2,-3)).to eq('0.125')
     end
     it 'raises a number to a decimal power' do
-      expect(string_calc.pow(4,0.5)).to eq('2')
+      expect(string_calc.pow(4,0.5)).to eq('2.0')
     end
   end
 
@@ -176,22 +176,6 @@ describe 'Calculator' do
     end
     it 'returns 2-digit decimal for non-round roots' do
       expect(string_calc.sqrt(2)).to eq('1.41')
-    end
-  end
-
-  describe "#memory=" do
-    it 'overwrites previous object from memory' do
-      string_calc.memory= 10
-      string_calc.memory = 5
-      expect(string_calc.memory).to eq('5')
-    end
-  end
-
-  describe '#memory' do
-    it 'starts as nil when the object in memory is returned' do
-      string_calc.memory = 42
-      string_calc.memory
-      expect(string_calc.memory).to eq('nil')
     end
   end
   end
